@@ -17,6 +17,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils/cn";
 import { buttonVariants } from "../ui/button";
 import { ThemeSwitcher } from "./darkmode-button";
+import DylanspaceLogo from "../common/DylanspaceLogo";
 
 const Topbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,16 +45,7 @@ const Topbar = () => {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Link
-            href="/"
-            className={cn(
-              buttonVariants({ variant: "link" }),
-              "font-bold text-2xl hover:no-underline"
-            )}
-          >
-            <span>DylanSpace</span>
-            <span className="text-4xl text-sky-500">.</span>
-          </Link>
+          <DylanspaceLogo />
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex space-x-6" justify="center">
