@@ -1,12 +1,6 @@
+import DylanCard from "@/components/common/DylanCard";
 import { Skeleton } from "@/components/ui/skeleton";
 import dynamic from "next/dynamic";
-
-const DylanCard = dynamic(() => import("@/components/common/DylanCard"), {
-  ssr: false,
-  loading: () => (
-    <Skeleton className="md:w-[610px] md:h-[219px] w-[300px] h-[200px] rounded-xl" />
-  ),
-});
 
 const ProgramingLang = dynamic(
   () => import("@/components/common/ProgramingLang"),

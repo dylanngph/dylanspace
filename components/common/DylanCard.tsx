@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 
-import { Card, CardBody } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/card";
 import Image from "next/image";
 import { socials } from "@/lib/constants/socials";
 import Link from "next/link";
@@ -21,8 +19,8 @@ const DylanCard = () => {
               height={200}
               className="object-cover shadow-md rounded-lg w-full h-full"
               src="/dylan-avatar.png"
-              priority
               quality={100}
+              priority
             />
           </div>
 
@@ -41,18 +39,13 @@ const DylanCard = () => {
                     <Link
                       key={index}
                       href={social.href}
-                      passHref
-                      legacyBehavior
+                      target="_blank"
+                      className={cn(
+                        buttonVariants({ variant: "ghost", size: "icon" }),
+                        "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"
+                      )}
                     >
-                      <a
-                        target="_blank"
-                        className={cn(
-                          buttonVariants({ variant: "ghost", size: "icon" }),
-                          "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"
-                        )}
-                      >
-                        <i className={cn(social.icon, "text-xl")} />
-                      </a>
+                      <i className={cn(social.icon, "text-xl")} />
                     </Link>
                   ))}
                 </div>
