@@ -1,4 +1,4 @@
-import { FC, Fragment } from "react";
+import { FC } from "react";
 import Topbar from "../shared/topbar";
 import Image from "next/image";
 import Footer from "../shared/footer";
@@ -7,9 +7,9 @@ interface RootLayoutProps extends React.PropsWithChildren<{}> {}
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
-    <div className="relative">
+    <main className="relative">
       <Topbar />
-      <main className="relative z-10 min-h-screen">{children}</main>
+      <section className="relative z-10 min-h-screen">{children}</section>
       <Footer />
       <div className="fixed hidden md:block opacity-70 -bottom-[40%] -left-[20%] z-0 blur-lg">
         <Image
@@ -17,6 +17,7 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
           src="/images/docs-left.png"
           width={1266}
           height={1211}
+          priority
           className="relative z-10 shadow-black/5 shadow-none transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-large"
         />
       </div>
@@ -26,10 +27,11 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
           src="/images/docs-right.png"
           width={1833}
           height={1822}
+          priority
           className="relative z-10 shadow-black/5 shadow-none transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-large"
         />
       </div>
-    </div>
+    </main>
   );
 };
 

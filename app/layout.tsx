@@ -1,10 +1,11 @@
-import "./globals.css";
+import "@/styles/globals.css";
 import "remixicon/fonts/remixicon.css";
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { default as Layout } from "@/components/layout/RootLayout";
 import { cn } from "@/lib/utils/cn";
+import QueryProvider from "@/providers/query-provider";
 
 const beVietnam = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -25,9 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(beVietnam.className, "antialiased")}>
-        <ThemeProvider>
-          <Layout>{children}</Layout>
-        </ThemeProvider>
+        <QueryProvider>
+          <ThemeProvider>
+            <Layout>{children}</Layout>
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   );

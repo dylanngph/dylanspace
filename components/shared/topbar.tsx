@@ -66,17 +66,6 @@ const Topbar = () => {
         })}
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link
-            href="#"
-            className={cn(
-              buttonVariants({ variant: "link" }),
-              "text-md font-normal"
-            )}
-          >
-            My resume
-          </Link>
-        </NavbarItem>
         <NavbarItem>
           <Button as={Link} className="bg-foreground text-background" href="#">
             <i className="ri-send-plane-fill" />

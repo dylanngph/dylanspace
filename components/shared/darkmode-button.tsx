@@ -21,6 +21,7 @@ export function ThemeSwitcher() {
         variant="link"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         aria-label="Toggle Dark Mode"
+        className="hover:no-underline"
       >
         {theme === "light" ? (
           <i className="ri-moon-fill text-xl" />
