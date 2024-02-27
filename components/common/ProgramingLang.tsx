@@ -14,7 +14,7 @@ const ProgramingLang = () => {
       <p className="text-muted-foreground">
         My programing languages of choice are:
       </p>
-      <div className="flex items-center gap-6 flex-wrap lg:w-[800px] justify-between">
+      <div className="flex items-center gap-6 flex-wrap lg:w-[800px] md:justify-between">
         {PROGRAMING_LANG.map((lang) => (
           <Image
             key={lang.value}
@@ -22,7 +22,6 @@ const ProgramingLang = () => {
             alt={lang.name}
             width={64}
             height={64}
-            priority
           />
         ))}
       </div>

@@ -1,7 +1,9 @@
+"use client";
+
 import { BlogCardProps } from "@/lib/types/interfaces";
 import React from "react";
-import { Card, CardBody } from "@nextui-org/card";
-import { Image } from "@nextui-org/image";
+import { Card, CardBody } from "@nextui-org/react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const FeaturedBlogCard = ({
@@ -17,10 +19,10 @@ const FeaturedBlogCard = ({
           <div className="relative col-span-4">
             <Image
               alt="DylanAvatar"
-              className="object-cover h-[400px]"
+              className="object-cover w-full h-full rounded-xl"
+              width={400}
               height={400}
               src="/dylan-avatar.png"
-              width="100%"
             />
           </div>
 

@@ -12,12 +12,14 @@ import {
   Button,
 } from "@nextui-org/react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { MAIN_NAVIGATION } from "@/lib/constants/navigation";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils/cn";
-import { buttonVariants } from "../ui/button";
-import { ThemeSwitcher } from "./darkmode-button";
 import DylanspaceLogo from "../common/DylanspaceLogo";
+
+const ThemeSwitcher = dynamic(() => import("./darkmode-button"), {
+  ssr: false,
+});
 
 const Topbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -1,7 +1,17 @@
 import React from "react";
-import BlogCard from "@/components/common/cards/BlogCard";
-import FeaturedBlogCard from "@/components/common/cards/FeaturedBlogCard";
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
+
+const FeaturedBlogCard = dynamic(
+  () => import("@/components/common/cards/FeaturedBlogCard"),
+  {
+    ssr: false,
+  }
+);
+
+const BlogCard = dynamic(() => import("@/components/common/cards/BlogCard"), {
+  ssr: false,
+});
 
 // create sample blog data with mockup images
 const sampleBlog = [
@@ -82,14 +92,12 @@ const BlogPage = () => {
           </h2>
         </div>
       </div>
-      <div>
-        <FeaturedBlogCard
-          title={testFeaturedBlog.title}
-          date={testFeaturedBlog.date}
-          shortDescription={testFeaturedBlog.shortDescription}
-          image={testFeaturedBlog.image}
-        />
-      </div>
+      <FeaturedBlogCard
+        title={testFeaturedBlog.title}
+        date={testFeaturedBlog.date}
+        shortDescription={testFeaturedBlog.shortDescription}
+        image={testFeaturedBlog.image}
+      />
       <div className="flex flex-col gap-6">
         <div className="flex justify-between items-center">
           <h2 className="text-3xl font-bold">Lates Blog</h2>

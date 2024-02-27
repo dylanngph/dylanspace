@@ -19,9 +19,10 @@ const DylanCard = () => {
               alt="DylanAvatar"
               width={200}
               height={200}
-              className="object-cover shadow-md rounded-lg"
+              className="object-cover shadow-md rounded-lg w-full h-full"
               src="/dylan-avatar.png"
               priority
+              quality={100}
             />
           </div>
 

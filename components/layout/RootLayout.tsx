@@ -1,7 +1,11 @@
 import { FC } from "react";
-import Topbar from "../shared/topbar";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Footer from "../shared/footer";
+
+const Topbar = dynamic(() => import("../shared/topbar"), {
+  ssr: false,
+});
 
 interface RootLayoutProps extends React.PropsWithChildren<{}> {}
 
@@ -17,7 +21,6 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
           src="/images/docs-left.png"
           width={1266}
           height={1211}
-          priority
           className="relative z-10 shadow-black/5 shadow-none transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-large"
         />
       </div>
@@ -27,7 +30,6 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
           src="/images/docs-right.png"
           width={1833}
           height={1822}
-          priority
           className="relative z-10 shadow-black/5 shadow-none transition-transform-opacity motion-reduce:transition-none !duration-300 rounded-large"
         />
       </div>
