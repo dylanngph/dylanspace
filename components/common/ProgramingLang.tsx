@@ -22,7 +22,7 @@ const ProgramingLang = () => {
             alt={lang.name}
             width={64}
             height={64}
-            className="h-[64px]"
+            priority
           />
         ))}
       </div>

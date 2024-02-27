@@ -2,7 +2,8 @@
 
 import React from "react";
 
-import { Card, CardBody, Image } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/react";
+import Image from "next/image";
 import { socials } from "@/lib/constants/socials";
 import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
@@ -16,11 +17,11 @@ const DylanCard = () => {
           <div className="relative col-span-6 md:col-span-4">
             <Image
               alt="DylanAvatar"
-              className="object-cover"
+              width={200}
               height={200}
-              shadow="md"
+              className="object-cover shadow-md"
               src="/dylan-avatar.png"
-              width="100%"
+              priority
             />
           </div>
 
