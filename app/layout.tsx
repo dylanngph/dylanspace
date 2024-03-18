@@ -1,11 +1,11 @@
 import "@/styles/globals.css";
 import "remixicon/fonts/remixicon.css";
-import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { default as Layout } from "@/components/layout/RootLayout";
 import { cn } from "@/lib/utils/cn";
 import QueryProvider from "@/providers/query-provider";
+import { Metadata } from "next/types";
 
 const beVietnam = Be_Vietnam_Pro({
   subsets: ["latin"],

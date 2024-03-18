@@ -24,23 +24,19 @@ const ThemeSwitcher = dynamic(() => import("./darkmode-button"), {
 const Topbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
-
   const pathname = usePathname();
 
   return (
-    <Navbar shouldHideOnScroll onMenuOpenChange={setIsMenuOpen} maxWidth="2xl">
+    <Navbar
+      shouldHideOnScroll
+      onMenuOpenChange={setIsMenuOpen}
+      maxWidth="full"
+      isBlurred={false}
+      classNames={{
+        base: "container bg-transparent",
+        wrapper: "px-0",
+      }}
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -79,20 +75,10 @@ const Topbar = () => {
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
-        {menuItems.map((item, index) => (
+        {MAIN_NAVIGATION.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              className="w-full"
-              href="#"
-            >
-              {item}
+            <Link className="w-full" href={item.path}>
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}
