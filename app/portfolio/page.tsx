@@ -13,6 +13,7 @@ const PortfolioPage = () => {
             width={80}
             height={80}
             className="rounded-full"
+            priority
           />
           <div className="flex flex-col gap-2">
             <h2 className="font-bold text-4xl">Dylan Nguyen</h2>

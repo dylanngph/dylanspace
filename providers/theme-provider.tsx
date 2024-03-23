@@ -8,7 +8,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   return (
     <LazyMotion features={domAnimation}>
       <NextUIProvider>
-        <NextThemesProvider attribute="class" defaultTheme="dark" enableSystem>
+        <NextThemesProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </NextThemesProvider>
       </NextUIProvider>
