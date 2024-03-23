@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Card, CardBody } from "@nextui-org/card";
 import Image from "next/image";
 import { socials } from "@/lib/constants/socials";
 import Link from "next/link";
@@ -9,8 +8,8 @@ import { buttonVariants } from "../ui/button";
 
 const DylanCard = () => {
   return (
-    <Card isBlurred className="dark:bg-foreground/5 max-w-[610px]" shadow="sm">
-      <CardBody>
+    <div className="dark:bg-foreground/5 max-w-[610px] backdrop-blur p-4 rounded-xl shadow">
+      <div>
         <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
           <div className="relative col-span-6 md:col-span-4">
             <Image
@@ -53,8 +52,8 @@ const DylanCard = () => {
             </div>
           </div>
         </div>
-      </CardBody>
-    </Card>
+      </div>
+    </div>
   );
 };
 
